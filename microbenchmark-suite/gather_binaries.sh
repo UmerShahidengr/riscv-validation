@@ -13,10 +13,12 @@ mkdir ../microbenchmark_suite-bins
 mkdir ../microbenchmark_suite_mem-bins
 
 for exe in $(ls | grep -o -E '^([^.]+)$') ; do
+case "$exe" in
+    memory*)
+        cp $exe ../microbenchmark_suite_mem-bins/$exe.RISCV
+esac    
     if [ "$exe" = "LICENSE" ] || [ "$exe" = "Makefile" ]; then
         continue
-    elif [[ $exe = memory* ]]; then
-        cp $exe ../microbenchmark_suite_mem-bins/$exe.RISCV
     else
         cp $exe ../microbenchmark_suite-bins/$exe.RISCV
     fi
