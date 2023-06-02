@@ -4,13 +4,13 @@ Scripts/tests/configurations needed for configuring a real RISC-V board in gem5 
 ## Setup
 1. Clone darchr/gem5 and this repo.
     ```sh
-    git clone https://github.com/darchr/gem5.git gem5_darchr
-    git clone https://github.com/darchr/riscv-validation.git
+    git clone https://github.com/umershahidengr/gem5.git gem5
+    git clone https://github.com/umershahidengr/riscv-validation.git
     ```
 
 2. Compile gem5 for RISCV from the REU2022/riscv-validation branch.
     ```sh
-    cd gem5_darchr
+    cd gem5
     git checkout --track origin/REU2022/riscv-validation
     scons build/RISCV/gem5.opt -j<threads>
     ```
@@ -54,7 +54,7 @@ The script must be run from the gem5 source directory.
     ```
     Example:
     ```sh
-    cd ~/gem5_darchr
+    cd ~/gem5
     ../riscv-validation/scripts/gem5_bench.sh configs/example/gem5_library/hifive-run.py ../riscv-validation/microbench-bins
     ../riscv-validation/scripts/gem5_bench.sh configs/example/gem5_library/hifive-run.py ../riscv-validation/microbenchmark_suite-bins 100
     ```
