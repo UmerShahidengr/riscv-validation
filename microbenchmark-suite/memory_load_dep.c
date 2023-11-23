@@ -41,15 +41,15 @@ typedef struct list element;
 
 // =============================================================================
 int main (int argc, char *argv[]) {
-    uint64_t size=0;
+    uint64_t size=128;
     uint64_t repetitions=0;
-    if(argc != 3) {
-        printf("Please provide the number of repetitions and array size.\n");
+    if(argc == 2) {
+        repetitions = string_to_uint64(argv[1]);
+    }
+    else {
+        printf("Please provide the number of repetitions.\n");
         exit(EXIT_FAILURE);
     }
-
-    repetitions = string_to_uint64(argv[1]);
-    size = string_to_uint64(argv[2]);
 
     if (size % 32 != 0) {
         printf("The array size needs to be divisible by 32 (due to unrolling).\n");
